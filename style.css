@@ -4,21 +4,47 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Segoe UI', sans-serif;
+    background-color: #000;
+    color: #fff;
+}
+
+.hero {
+    position: relative;
+    background-size: 100vw;
+    height: 100vh;
+    width: 100%;
+    padding: 20px;
+}
+
+.hero::before {    
+    content: "";
+    background-image: url('images/hero.jpg');
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 1;
 }
 
 nav {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 30px;
-    border-bottom: 1px solid black;
+    padding: 20px 100px;
 }
 
 .nav-logo > a {
     text-decoration: none;
-    color: #000;
+    color: orangered;
 }
 
 .nav-list > ul {
@@ -28,7 +54,7 @@ nav {
 
 .nav-list > ul > a {
     text-decoration: none;
-    color: #000;
+    color: orangered;
 }
 
 .nav-list > ul > a > li {
@@ -37,16 +63,25 @@ nav {
 }
 
 .home {
+    position: relative;
     text-align: center;
     padding: 20px;
+    color: #fff;
+    margin-top: 200px;
 }
 
 .home > h1 {
     margin: 20px;
+    font-size: 64px;
+}
+
+.home > h1 > span {
+    color: orangered;
 }
 
 .home > p {
     margin-bottom: 20px;
+    padding: 0 450px;
 }
 
 .home > button {
@@ -55,24 +90,30 @@ nav {
     width: 150px;
     cursor: pointer;
     font-weight: bold;
+    background: orangered;
+    border: none;
+    color: #fff;
+    border-radius: 7px;
 }
 
 .about {
+    height: 100vh;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 100px;
+    grid-gap: 200px;
     margin-top: 30px;
 }
 
 .about-image {
     display: flex;
     justify-content: right;
+    align-items: center;
 }
 
-.placeholder {
-    height: 200px;
-    width: 400px;
-    background-color: #ddd;
+.about-image > img {
+    height: 750px;
+    width: 500px;
+    border-radius: 20px;
 }
 
 .about-info {
@@ -81,37 +122,98 @@ nav {
     justify-content: center;
 }
 
+.about-info > small {
+    color: orangered;
+}
+
+.about-info > h1 {
+    margin-bottom: 20px;
+    font-size: 48px;
+}
+
 .about-info > ul {
+    margin-top: 30px;
     list-style-type: none;
+}
+
+.about-info > ul > li {
+    font-size: 20px;
+}
+
+.about-info > ul > li > i {
+    color: orangered;
 }
 
 .trainers {
     text-align: center;
     margin-top: 30px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.trainers > h1 {
+    font-size: 48px;
+}
+
+.trainers > p {
+    margin-top: 30px;
+    padding: 0 50px;
+}
+
+.trainers > h1 > span {
+    color: orangered;
 }
 
 .trainer-container {
-    margin-top: 30px;
+    margin-top: 70px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 }
 
+.trainer-card > h3 {
+    color: orangered;
+}
+
 .trainer-image {
-    height: 300px;
-    width: 200px;
+    height: 500px;
+    width: 350px;
     background-color: #ddd;
     margin: 10px auto;
+    border-radius: 15px;
 }
+
+.trainer-image > img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
 .contact {
     text-align: center;
     margin-top: 30px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contact > h1 {
+    font-size: 48px;
+}
+
+.contact > h1 > span {
+    color: orangered;
 }
 
 .form-box {
-    border: 1px solid #000;
     width: 700px;
     padding: 50px;
     margin: 30px auto;
+    background-color: orangered;
+    border-radius: 15px;
 }
 
 .form-box > form {
@@ -126,33 +228,63 @@ nav {
 
 .form-box > form > input {
     width: 100%;
-    padding: 10px;
-    margin: 5px 0 10px 0;
+    padding: 15px;
+    margin: 5px 0 20px 0;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+
+.form-box > form > input:focus {
+    border: 2px solid #000;
 }
 
 .form-box > form > textarea {
     width: 100%;
-    padding: 10px;
-    margin: 5px 0 10px 0;
+    padding: 15px;
+    margin: 5px 0 20px 0;
     height: 120px;
     resize: none;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+
+.form-box > form > textarea:focus {
+    border: 2px solid #000;
 }
 
 .form-box > form > button {
-    padding: 10px;
+    padding: 15px;
     width: 100%;
     font-weight: bold;
     font-size: 16px;
     cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #000;
+    color: #fff;
+}
+
+.form-box > form > button:hover {
+    background-color: orangered;
+    border: 2px solid #000;
+    color: #000;
+}
+
+.social > h2 {
+    color: orangered;
 }
 
 .social-icons {
     margin-top: 20px;
 }
 
-.footer {
-    text-align: center;
+.social-icons > i {
     padding: 10px;
-    border-top: 1px solid #000;
-    margin-top: 30px;
+    border-radius: 50%;
+    margin: 0 3px;
+    background-color: #fff;
+    color: orangered;
+    cursor: pointer;
 }
