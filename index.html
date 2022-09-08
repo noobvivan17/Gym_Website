@@ -5,15 +5,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link type="image/png" sizes="16x16" rel="icon" href="images/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="responsive.css">
     <title>Gym Website</title>
 </head>
 
 <body>
-    <div class="hero" id="hero">
+    <div class="hero" id="hero" data-aos="fade-up">
         <nav>
             <div class="nav-logo">
                 <a href="#hero">
@@ -44,10 +45,10 @@
         </div>
     </div>
     <div class="about" id="about">
-        <div class="about-image">
+        <div class="about-image" data-aos="fade-right">
             <img src="images/about.jpg" class="placeholder">
         </div>
-        <div class="about-info">
+        <div class="about-info" data-aos="fade-left">
             <small>About our Gym</small>
             <h1>SAFE BODY BUILDING</h1>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum repellendus repellat dolor. <br> Reiciendis
@@ -64,19 +65,19 @@
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Labore doloribus laudantium reiciendis perspiciatis
             tenetur placeat, ratione nostrum quas tempora in?</p>
         <div class="trainer-container">
-            <div class="trainer-card">
+            <div class="trainer-card" data-aos="flip-right">
                 <div class="trainer-image">
                     <img src="images/trainer1.jpg" alt="Trainer">
                 </div>
                 <h3>Trainer #1</h3>
             </div>
-            <div class="trainer-card">
+            <div class="trainer-card" data-aos="flip-right">
                 <div class="trainer-image">
                     <img src="images/trainer2.jpg" alt="Trainer">
                 </div>
                 <h3>Trainer #2</h3>
             </div>
-            <div class="trainer-card">
+            <div class="trainer-card" data-aos="flip-right">
                 <div class="trainer-image">
                     <img src="images/trainer3.jpg" alt="Trainer">
                 </div>
@@ -87,7 +88,7 @@
     <div class="contact" id="contact">
         <h1>GET IN <span>TOUCH</span></h1>
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate, a!</p>
-        <div class="form-box">
+        <div class="form-box" data-aos="zoom-in">
             <form action="">
                 <label for="name">Name</label>
                 <input type="text" name="name" placeholder="John Doe" required>
@@ -108,7 +109,14 @@
             </div>
         </div>
     </div>
-    <script src="app.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            delay: 500, 
+            duration: 1000,
+            once: false
+        });
+    </script>
 </body>
 
 </html>
