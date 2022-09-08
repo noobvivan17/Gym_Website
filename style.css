@@ -20,6 +20,8 @@ body {
     height: 100vh;
     width: 100%;
     padding: 20px;
+    display: flex;
+    align-items: center;
 }
 
 .hero::before {    
@@ -35,11 +37,14 @@ body {
 }
 
 nav {
-    position: relative;
+    position: fixed;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 20px 100px;
+    width: 100%;
+    top: 0;
+    z-index: 1;
 }
 
 .nav-logo > a {
@@ -67,7 +72,7 @@ nav {
     text-align: center;
     padding: 20px;
     color: #fff;
-    margin-top: 200px;
+    margin-top: 30px;
 }
 
 .home > h1 {
@@ -81,7 +86,7 @@ nav {
 
 .home > p {
     margin-bottom: 20px;
-    padding: 0 450px;
+    padding: 0 50px;
 }
 
 .home > button {
@@ -101,7 +106,7 @@ nav {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 200px;
-    margin-top: 30px;
+    margin: 30px 50px 0 50px;
 }
 
 .about-image {
@@ -179,7 +184,6 @@ nav {
 .trainer-image {
     height: 500px;
     width: 350px;
-    background-color: #ddd;
     margin: 10px auto;
     border-radius: 15px;
 }
